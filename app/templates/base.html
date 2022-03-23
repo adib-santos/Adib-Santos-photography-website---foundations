@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %} Adib Santos {% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    {% endblock %}
+</head>
+<body>
+    <nav>
+        <a class="logo" href="http://127.0.0.1:5000/"><h1 id="title">Adib Santos</h1></a>
+          <ul class="nav-bar">
+            <a href="/shop" ><li class="item">Shop</li></a>
+            <a href="/about"><li class="item">About</li></a>
+            <a href="/street"><li class="item">Street</li></a>
+            <a href="/portrait"><li class="item">Portrait</li></a>
+          </ul>
+      </nav>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block title %}Shop / Adib Santos{% endblock %}
+
+{% block body %}
+ 
+<h1>Prints shop</h1>
+<ul>
+  {% for slug, foto in fotos.items()%}
+      <li>
+          <a href="/shop/{{slug}}">{{foto["name"]}}</a>
+      </li>
+  {% endfor %}  
+</ul>
+
+<a href="/receipt.txt">Click here to view your receipt</a>
+
+
+{% endblock %}
