@@ -1,5 +1,7 @@
+import logging
 from flask import Flask
-from . import fotos, simple_pages
+from . import shop_outer, simple_pages_outer
+import logging
 
 def create_app(): 
     app = Flask(__name__)
@@ -11,5 +13,5 @@ def create_app():
 
 # Blueprints
 def register_blueprints(app: Flask): 
-    app.register_blueprint(fotos.routes.blueprint)
-    app.register_blueprint(simple_pages.routes.blueprint)
+    app.register_blueprint(shop_outer.routes.blueprint)
+    app.register_blueprint(simple_pages_outer.routes.blueprint)
