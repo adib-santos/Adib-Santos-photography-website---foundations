@@ -3,3 +3,4 @@ __pychache__
 .DS_Store
 .env
 .pytest_cache
+database.db
