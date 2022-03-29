@@ -1,6 +1,6 @@
 import logging
 from flask import Flask
-from . import shop_outer, simple_pages_outer
+from . import shop_outer, simple_pages_outer, orders
 from app.extensions.database import db, migrate 
 
 def create_app(): 

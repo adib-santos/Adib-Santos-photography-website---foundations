@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from .models import Foto
 
 blueprint = Blueprint('fotos', __name__)
 
