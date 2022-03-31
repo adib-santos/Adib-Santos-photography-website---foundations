@@ -1,18 +1,18 @@
 from flask import Blueprint, render_template
-from .models import Foto
+from . models import Foto
 
 blueprint = Blueprint('fotos', __name__)
 
-#fotos_data = {
- #  "rome" : {"name": " Old man in rome ", "price": "$50", "image": "/static/images/selfie.jpg"}, 
-  #  "quito" : {"name": "Hija con su hija ", "price": "$45", "image": "/static/images/reflection-rome.jpg"}
-#}
-
 @blueprint.route('/shop')
-def shop(): 
-    return render_template('shop/index.html', fotos = fotos_data)
+def shop():
+    all_fotos = Foto.query.all() 
+    return render_template('shop/index.html', fotos = all_fotos)
 
-@blueprint.route('/shop/<slug>') # aqui borre el  -> methods = ['GET']
+@blueprint.route('/shop/<slug>', methods = ['GET']) # aqui borre el  -> methods = ['GET']
 def ind(slug): 
-    
-    return render_template('/shop/ind.html', fotos = fotos_data[slug])
+
+    all_fotos = Foto.query.all(id) # Read the querry one part to solve this
+    print(id)
+    print(all_fotos)
+
+    return render_template('/shop/ind.html', fotos = all_fotos[slug])

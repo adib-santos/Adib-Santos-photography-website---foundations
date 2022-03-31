@@ -6,9 +6,13 @@
  
 <h1>Prints shop</h1>
 <ul>
-  {% for slug, foto in fotos.items()%}
+  {% for foto in fotos %}
       <li>
-          <a href="/shop/{{slug}}">{{foto["name"]}}</a>
+        {% if foto.price == 45 %}
+          <s>{{ foto.name }}</s>
+        {% else %}
+          <a href="/shop/{{ foto.slug }}">{{ foto.name }}</a>
+        {% endif %}
       </li>
   {% endfor %}  
 </ul>

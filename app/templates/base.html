@@ -7,19 +7,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %} Adib Santos {% endblock %}</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     {% endblock %}
 </head>
 <body>
     <nav>
-        <a class="logo" href="/"><h1 id="title">Adib Santos</h1></a>
+        <a href="/"><h1 id="title"><img class="logo" src="static/images/foto-logo-black.png" ></h1></a>
           <ul class="nav-bar">
-            <a href="/shop" ><li class="item">Shop</li></a>
-            <a href="/about"><li class="item">About</li></a>
-            <a href="/street"><li class="item">Street</li></a>
+            <a href="https://www.instagram.com/_adib_santos_/" target="_blank" class="item"><img class="instagram" src="static/images/instagram.png"></a>
             <a href="/portrait"><li class="item">Portrait</li></a>
+            <a href="/street"><li class="item">Street</li></a>
+            <a href="/about"><li class="item">About</li></a>
+            <a href="/shop" ><li class="item shop">Shop</li></a>
           </ul>
       </nav>
     {% block body %}
     {% endblock %}
 </body>
 </html>
+
