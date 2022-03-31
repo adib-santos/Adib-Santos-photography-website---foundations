@@ -49,6 +49,10 @@ nav {
     color: black; 
 }
 
+.shop:hover {
+    border: 1px solid black; 
+}
+
 a:visited {
     text-decoration: none; 
 }
@@ -105,9 +109,61 @@ h1, h3{
     border-radius: 5px; 
     background-color: #786E4C; 
     color: #F2F0EB; 
-    font-weight: 900;
+    font-family: Montserrat;
 }
 
 a {
     text-decoration: none; 
 }
+
+.page-title {
+    margin-top: 10%; 
+    font-size: 50px; 
+}
+
+/*
+    Portrait page
+*/
+
+.pmc {
+    width: 100%; 
+    display: flex; 
+}
+
+.title-portrait {
+    margin-top: 20%;
+    margin-left: 32%; 
+    max-width: 20%;  
+    font-size: 35px;
+}
+
+.portrait-main {
+    width: 34%; 
+    margin-top: 8%;  
+    margin-left: 5px; 
+}
+
+
+/*  
+    Street page
+*/
+
+.smc {
+    display: flex; 
+    justify-content: center;
+    align-items: 
+}
+
+.street-main {
+    width: 30%; 
+    margin-top: 10%; 
+
+}
+
+.title-street {
+    max-width: 17%; 
+    margin-top: 20%;  
+    margin-left: 20px; 
+    padding-bottom: 0;
+}
+
