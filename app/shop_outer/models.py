@@ -7,3 +7,4 @@ class Foto(db.Model):
     price = db.Column(db.Numeric(10, 2))
     picture_url = db.Column(db.String(260))
     cookie_orders = db.relationship('FotoOrder', backref = 'foto', lazy = True)
+
