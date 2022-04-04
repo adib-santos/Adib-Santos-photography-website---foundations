@@ -153,7 +153,7 @@ a {
 }
 
 /*  
-    Street page
+    STREET PAGE
 */
 
 .smc {
@@ -176,3 +176,13 @@ a {
     font-size: 35px;
 }
 
+
+/*
+    SHOP
+*/ 
+
+
+.specific {
+    border: 1px solid #786E4C; 
+    border-radius: 5px;
+}
