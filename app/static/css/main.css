@@ -81,9 +81,36 @@ h1, h3{
     padding-left: 20px;  
 }
 
+
+/* 
+    ABOUT 
+*/ 
+
+.about-container {
+
+    display: flex; 
+    justify-content: center;
+ 
+}
 .selfie {
-    height: 500px; 
-    width: 300px; 
+    width: 30%;
+    margin-left: 300px; 
+    margin-top: 30px; 
+}
+
+.sub-about-text {
+    margin-right: 20px;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+
+.bout-me {
+    width: 50%;
+    font-size: 25px;
+}
+
+.me-description {
+    width: 50%;;
 }
 
 .text {
@@ -143,10 +170,6 @@ a {
     margin-bottom: 300px;
 }
 
-.pmc > img:hover {
-    background-color: blue;
-}
-
 .title-portrait {
     margin-top: 15%;
     margin-left: 32%; 
@@ -163,38 +186,44 @@ a {
 
 /*                                              GRID */
 
-.portrait-grid {
-    --gap: 16px; 
-    --num-cols: 3; 
-    --row-height: 700px; 
-
-    box-sizing: content-box; 
-    padding: var(--gap);
-
-    display: grid;
-    grid-template-columns: repeat(var(--num-cols), 1fr);
-    grid-auto-rows: var(--row-height);
-    gap: var(--gap);
+.grid {
+    display: grid; 
+    place-items: center;
+    width: 100%;
+    gap: 15px; 
 }
 
-.portrait-grid > img {
-    width: 100%; 
-    height: 100%;
+.grid > img {
+    width: 90%; 
+    height: 100%; 
+    gap: 10px;
     object-fit: cover;
+
 }
 
-@media screen and(max-width: 1024px) {
-    .portrait-grid {
-        --num-cols: 2; 
+@media only screen and (min-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 2fr); 
     }
 }
 
+@media only screen and (min-width: 950px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 
+    .grid > img {
+        width: 80%;
+        gap: 40px; 
+    }
+}
 
 
 /*  
     STREET PAGE
 */
+
+/*                                               MAIN */
 
 .smc {
     display: flex; 
