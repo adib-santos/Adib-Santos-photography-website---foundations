@@ -6,13 +6,9 @@ blueprint = Blueprint('fotos', __name__)
 @blueprint.route('/shop')
 def shop():
     all_fotos = Foto.query.all() 
-    print(all_fotos)
     return render_template('shop/index.html', fotos = all_fotos)
 
-@blueprint.route('/shop/<slug>', methods = ['GET']) # aqui borre el  -> methods = ['GET']
+@blueprint.route('/shop/<slug>') 
 def ind(slug): 
-
-    all_fotos = Foto.query.all(id) # Read the querry one part to solve this
-    
-    
-    return render_template('/shop/ind.html', fotos = all_fotos[slug])
+    foto = Foto.query.filter_by(slug=slug).first_or_404()    
+    return render_template('/shop/ind.html', foto = foto)

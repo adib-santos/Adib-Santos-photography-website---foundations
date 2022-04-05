@@ -9,8 +9,6 @@ fotos_data = {
     "Valencia" : {"name": "massi ", "price": 30},
 }
 
-print("Adding")
-
 for slug, foto in fotos_data.items(): 
     new_foto = Foto(slug = slug, name = foto['name'], price = foto['price'])
     db.session.add(new_foto)
