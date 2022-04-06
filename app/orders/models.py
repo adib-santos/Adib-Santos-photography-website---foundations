@@ -21,5 +21,3 @@ class Address(db.Model):
     zip = db.Column(db.String(80))
     country = db.Column(db.String(80))
     order_id = db.Column(db.Integer, db.ForeignKey('order.id'))
-    
-
