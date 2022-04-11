@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template, request, current_app
-from . models import Foto
+from . models import Portrait
 
 blueprint = Blueprint('fotos', __name__)
 
-# current_app.config['POSTS_PER_PAGE']
+current_app.config['POSTS_PER_PAGE']
 
 
 @blueprint.route('/shop')

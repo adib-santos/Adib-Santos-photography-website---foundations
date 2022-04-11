@@ -1,5 +1,5 @@
 from app.app import create_app
-from app.shop_outer.models import Foto
+from app.simple_pagse_outer.models import Foto
 from app.extensions.database import db
 
 app = create_app()
