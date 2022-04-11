@@ -10,7 +10,6 @@ def create_app():
     register_extensions(app)
     register_blueprints(app)
 
-
     return app
 
 # Blueprints
