@@ -8,7 +8,6 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 
-
 class CRUDMixin(): 
 
     def save(self): 

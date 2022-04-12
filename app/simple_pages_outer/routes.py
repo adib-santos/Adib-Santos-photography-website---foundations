@@ -26,16 +26,7 @@ def street():
 def portrait(): 
     return render_template('simple_pages/portrait.html')
 
-
 """
-from flask import Blueprint, render_template, request, current_app
-from . models import Foto
-
-blueprint = Blueprint('fotos', __name__)
-
-current_app.config['POSTS_PER_PAGE']
-
-
 @blueprint.route('/shop')
 def shop():
     page_number = request.args.get('page', 1, type=int)
@@ -46,7 +37,6 @@ def shop():
 def ind(slug): 
     foto = Foto.query.filter_by(slug=slug).first_or_404()    
     return render_template('/shop/ind.html', foto = foto)
-
-
-
 """
+
+

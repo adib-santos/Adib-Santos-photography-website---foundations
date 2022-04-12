@@ -1,3 +1,5 @@
+"""
+
 from flask import Blueprint, render_template, request, current_app
 
 
@@ -16,3 +18,5 @@ def shop():
 def ind(slug): 
     foto = Foto.query.filter_by(slug=slug).first_or_404()    
     return render_template('/shop/ind.html', foto = foto)
+
+"""
