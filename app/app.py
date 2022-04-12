@@ -2,7 +2,7 @@ import logging
 from unittest import skip
 from flask import Flask
 from . import simple_pages_outer
-from app.extensions.database import db
+from app.extensions.database import db, migrate
 
 
 def create_app(): 
