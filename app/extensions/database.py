@@ -1,8 +1,12 @@
+# This file holds all aditions that come from 3rd party packages
+
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from flask_migrate import Migrate # -> Why is this not importing properly?
+
 
 db = SQLAlchemy()
 migrate = Migrate()
+
 
 
 class CRUDMixin(): 
