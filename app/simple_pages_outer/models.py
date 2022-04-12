@@ -8,4 +8,11 @@ class Foto(db.Model):
     price = db.Column(db.Numeric(10, 2))
     picture_url = db.Column(db.String(80), unique = True)
     genre = db.Column(db.String(80))
+    country = db.Column(db.String(80))
+    city = db.Column(db.String(80))
+    desctiption = db.Column(db.String(1000))
+    foto_orders = db.relationship('FotoOrder', backref='order', lazy=True)
 
+
+
+    

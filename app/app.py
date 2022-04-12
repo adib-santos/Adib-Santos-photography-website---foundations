@@ -1,7 +1,7 @@
 import logging
 from unittest import skip
 from flask import Flask
-from . import simple_pages_outer
+from . import simple_pages_outer, modeling
 from app.extensions.database import db, migrate
 
 
