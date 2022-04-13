@@ -1,6 +1,6 @@
 from venv import create
 from app.app import create_app
-from app.models.base import Foto
+from app.models.orders import Foto
 from app.extensions.database import db
 
 app = create_app()
