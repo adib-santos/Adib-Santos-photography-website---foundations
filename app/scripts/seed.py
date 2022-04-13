@@ -4,75 +4,75 @@ from app.models.base import Foto
 from app.extensions.database import db
 
 app = create_app()
-app.app_context().push()
+app.app_context().push() # -> gives me access to the flask app
 
 fotos_db = {
                                 # This is the PORTRAIT part of the database
     'caro_1' : {
         'price': 25, 'picture_url': '/static/images/portrait/caro-1.jpg', 
-        'genre': 'portrait',
+        'genre': 'portrait', 'country': 'nada', 'city': 'nada', 
         },
     'caro_2' : {
         'price': 25, 'picture_url': '/static/images/portrait/caro-2.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'chicky-1' : {
         'price': 25, 'picture_url': '/static/images/portrait/chicky-1.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'churos-1' : {
         'price': 25, 'picture_url': '/static/images/portrait/churos-1.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'churos-2' : {
         'price': 25, 'picture_url': '/static/images/portrait/churos-2.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'churos-3' : {
         'price': 25, 'picture_url': '/static/images/portrait/churos-3.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'franco-1' : {
         'price': 25, 'picture_url': '/static/images/portrait/franco-1.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'franco-2' : {
         'price': 25, 'picture_url': '/static/images/portrait/franco-2.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'franco-3' : {
         'price': 25, 'picture_url': '/static/images/portrait/franco-3.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'isa' : {
         'price': 25, 'picture_url': '/static/images/portrait/isa.JPG', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'jaz1' : {
         'price': 25, 'picture_url': '/static/images/portrait/jaz1.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'jaz2' : {
         'price': 25, 'picture_url': '/static/images/portrait/jaz2.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },   
     'lucy' : {
         'price': 25, 'picture_url': '/static/images/portrait/lucy.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'memi-1' : {
         'price': 25, 'picture_url': '/static/images/portrait/memi-1.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'shapo-1' : {
         'price': 25, 'picture_url': '/static/images/portrait/shapo-1.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },
     'shapo-2' : {
         'price': 25, 'picture_url': '/static/images/portrait/shapo-2.jpg', 
-        'genre': 'portrait'
+        'genre': 'portrait', 'country': 'None', 'city': 'None', 
         },            
-                                        # This is the PORTRAIT part of the database
+                                        # This is the STREET part of the database
 
     'aaron' : {
         'price': 25, 'picture_url': '/static/images/street/aaron.jpg', 
@@ -210,3 +210,8 @@ fotos_db = {
 }
 
 
+for slug, foto in fotos_db.items():
+    new_foto = Foto(slug=slug, picture_url=foto['picture_url'], price=foto['price'], genre=foto['genre'], country=foto['country'], city=foto['city'])
+    db.session.add(new_foto)
+
+db.session.commit()

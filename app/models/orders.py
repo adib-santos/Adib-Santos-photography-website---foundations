@@ -10,7 +10,7 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     date = db.Column(db.DateTime, nullable = False, default=datetime.utcnow)
     address = db.relationship('Address', backref = 'order', uselist = False, lazy = True)
-    foto_orders = db.relationship('FotoOrder', backref='order', lazy=True)
+    foto_orders = db.relationship('FotoOrder', backref='foto', lazy = True)
 
 class Address(db.Model):     
     id = db.Column(db.Integer, primary_key = True)
