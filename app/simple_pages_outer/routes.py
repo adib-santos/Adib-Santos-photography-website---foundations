@@ -1,6 +1,6 @@
 from fileinput import filelineno
 from flask import Blueprint, render_template, redirect, url_for, send_file, request, current_app
-from .models import Foto
+from app.models.base import Foto
 
 blueprint = Blueprint('simple_pages', __name__)
 
