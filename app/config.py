@@ -6,7 +6,8 @@ load_dotenv()
 
 SQLALCHEMY_DATABASE_URI = environ.get('DATABASE_URL')
 
-FOTOS_PER_PAGE = 1
+
+# FOTOS_PER_PAGE = 1
 
 
 

@@ -6,6 +6,9 @@ from flask_migrate import Migrate
 db = SQLAlchemy()
 migrate = Migrate()
 
+
+
+"""
 class CRUDMixin(): 
 
     def save(self): 
@@ -17,3 +20,4 @@ class CRUDMixin():
         db.session.delete(self)
         db.session.commit()
         return
+"""

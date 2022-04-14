@@ -3,6 +3,7 @@ from unittest import skip
 from flask import Flask
 from . import simple_pages_outer, models
 from app.extensions.database import db, migrate
+from app.config import SQLALCHEMY_DATABASE_URI
 
 
 def create_app(): 
