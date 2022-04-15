@@ -23,3 +23,12 @@ class Foto(db.Model):
   genre = db.Column(db.String(80))
   country = db.Column(db.String(80))
   city = db.Column(db.String(80))
+
+
+class User(db.Model): 
+  id = db.Column(db.Integer, primary_key = True)
+  slug = db.Column(db.String(80), unique = True)
+  name = db.Column(db.String(80))
+  password = db.Column(db.String(80))
+  
+
