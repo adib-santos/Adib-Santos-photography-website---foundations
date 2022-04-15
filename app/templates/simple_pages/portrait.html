@@ -9,11 +9,15 @@
     <img src="static/images/portrait/isa.JPG" alt="" class="portrait-main">
 </div>
 
-<!--
-    <div class="grid">
-    
-    </div>
- -->
+<ul class="ind-parent">
+    {% for foto in fotos %}
+    <li class="ind">
+        {% if foto.genre == 'portrait' %}
+        <a class="ind-try" href="/portrait/{{ foto.slug }}"> {{ foto.slug }}</a>
+        {% endif %}
+    </li>
+    {% endfor%}
+</ul>
 
 
 {% endblock %}
