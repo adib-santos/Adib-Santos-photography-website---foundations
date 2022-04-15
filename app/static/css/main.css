@@ -204,8 +204,8 @@ a {
 }
 
 .street-main {
-    max-width: 400px; 
-    margin-top: 4%; 
+    max-width: 425px; 
+    margin-top: 0.5%; 
     position: relative; 
     right: 170px; 
     box-shadow: 10px 10px 5px #ccc;
