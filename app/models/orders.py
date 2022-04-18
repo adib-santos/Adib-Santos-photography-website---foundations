@@ -1,4 +1,4 @@
-from app.extensions.database import db
+from app.extensions.database import db, CRUDMixin
 from datetime import datetime
 
 class Order(db.Model): 
@@ -15,7 +15,7 @@ class Address(db.Model):
   country = db.Column(db.String(80))
   orders = db.relationship('Order', backref = 'address', lazy = True)
 
-class Foto(db.Model): 
+class Foto(db.Model, CRUDMixin): 
   id = db.Column(db.Integer, primary_key = True)
   slug = db.Column(db.String(80), unique = True)
   name = db.Column(db.String(80), unique = True)

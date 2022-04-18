@@ -13,7 +13,9 @@
     {% for foto in fotos %}
     <li class="ind">
         {% if foto.genre == 'portrait' %}
-        <a class="ind-try" href="/portrait/{{ foto.slug }}"> {{ foto.slug }}</a>
+            <a class="ind-try" href="/portrait/{{ foto.slug }}"> {{ foto.slug }}</a>
+        {% else %}
+            {{ continue }}
         {% endif %}
     </li>
     {% endfor%}

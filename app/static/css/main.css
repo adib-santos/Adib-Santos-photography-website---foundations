@@ -32,7 +32,6 @@ nav {
     display: inline-block;
     margin-right: 1rem; 
     margin-left: 1.5rem; 
-
 }
 
 .shop {
@@ -80,11 +79,9 @@ h1, h3{
 */ 
 
 .ind {
-    border: 1px solid black; 
 }
 
 .ind-container {
-    border: 1px solid black ;
     display: flex; 
     justify-content: center;
 }
@@ -94,17 +91,14 @@ h1, h3{
 }
 
 .ind-info-container {
-    border: 1px solid black; 
     display: static; 
 }
 .ind-lugar {
-    border: 1px solid black; 
     position: relative; 
     top: 100px; 
 }
 
 .ind-precio {
-    border: 1px solid black;
     display: relative; 
     top: 150px; 
 }

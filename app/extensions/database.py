@@ -7,11 +7,9 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 
-
-"""
 class CRUDMixin(): 
 
-    def save(self): 
+    def save(self):
         db.session.add(self)
         db.session.commit()
         return self
@@ -19,5 +17,4 @@ class CRUDMixin():
     def delete(self): 
         db.session.delete(self)
         db.session.commit()
-        return
-"""
+        return 
