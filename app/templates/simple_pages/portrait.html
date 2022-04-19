@@ -13,7 +13,7 @@
     {% for foto in fotos %}
     <div class="grid-ind">
         {% if foto.genre == 'portrait' %}
-            <a class="ind-try" href="/portrait/{{ foto.slug }}"> {{ foto.name }}</a>
+            <a href="/portrait/{{ foto.slug }}"> <img src="{{ foto.picture_url }}"> </a>
         {% endif %}
     </div>
     {% endfor%}
