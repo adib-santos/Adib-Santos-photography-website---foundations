@@ -8,25 +8,25 @@ app.app_context().push() # -> gives me access to the flask app
 fotos_db = {
                         # PORTRAIT Part of the database
     'caro_1' : {
-        'id': 26,
+        'id': 1,
         'name': 'caro', 
         'price': 25, 'picture_url': '../static/images/portrait/caro-1.jpg',
         'genre': 'portrait', 'country': 'nada', 'city': 'nada',
        },
    'caro_2' : {
-        'id': 27,
+        'id': 2,
         'name': 'caro-2', 
         'price': 25, 'picture_url': '../static/images/portrait/caro-2.jpg',
         'genre': 'portrait', 'country': 'None', 'city': 'None',
        },
    'chicky-1' : {
-        'id': 28,
+        'id': 3,
         'name': 'chicky', 
         'price': 25, 'picture_url': '../static/images/portrait/chicky-1.jpg',
         'genre': 'portrait', 'country': 'None', 'city': 'None',
        },
    'churos-2' : {
-        'id': 29,
+        'id': 4,
         'name': 'churos-2', 
         'price': 25, 'picture_url': '../static/images/portrait/churos-2.jpg',
         'genre': 'portrait', 'country': 'None', 'city': 'None',
@@ -59,7 +59,7 @@ fotos_db = {
         'id': 9,
         'name': 'churos-1',
         'price': 25, 'picture_url': '../static/images/street/chicky-1.jpg', 
-        'genre': 'street', 'country': 'Ecuador', 'city': 'Quito',
+        'genre': 'portrait', 'country': 'Ecuador', 'city': 'Quito',
     },
 
                                 # STREET part of the database

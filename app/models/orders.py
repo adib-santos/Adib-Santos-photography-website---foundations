@@ -36,6 +36,3 @@ class User(db.Model):
   order_id = db.Column(db.Integer, db.ForeignKey('order.id'), nullable = False)
 
   
-
-#   slug = db.Column(db.String(80), unique = True)
-#   orders = db.relationship('Order', backref = 'address', lazy = True)
