@@ -3,9 +3,7 @@ from datetime import datetime
 
 class Order(db.Model, CRUDMixin): 
   id = db.Column(db.Integer, primary_key = True)
-  date = db.Column(db.DateTime, nullable = False, default=datetime.utcnow)
   foto_id = db.Column(db.Integer, db.ForeignKey('foto.id'), nullable = False)
-  users = db.relationship('User', backref='order', lazy=True)
   address = db.relationship('Address', backref='order', lazy = True)
 
 class Address(db.Model, CRUDMixin):     
@@ -33,6 +31,7 @@ class User(db.Model):
   slug = db.Column(db.String(80), unique = True)
   name = db.Column(db.String(80))
   password = db.Column(db.String(80))
-  order_id = db.Column(db.Integer, db.ForeignKey('order.id'), nullable = False)
 
   
+# This column is supposed to go in Order:   
+# date = db.Column(db.DateTime, nullable = False, default=datetime.utcnow)

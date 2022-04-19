@@ -28,14 +28,3 @@ def test_get_checkout_renders(client):
     response = client.get('/checkout')
     assert b'Checkout' in response.data
 
-def test_post_checkout_creates_address(client): 
-    # creates an address related to the order
-
-    response = client.post('/checkout', data = {
-        'street': 'Wesertrasse 14', 
-        'city': 'Berlin', 
-        'zip': 12047, 
-        'country': 'Germany', 
-    })
-
-    assert Address.query.first().order_id is 1

@@ -29,35 +29,27 @@ def portrait():
     all_fotos = Foto.query.all()
     return render_template('simple_pages/portrait.html', fotos = all_fotos)
 
+
+""" Special routes """
+
 @blueprint.get('/checkout')
 def get_checkout():
     fotos = Foto.query.all()
+
     return render_template('simple_pages/new.html', fotos = fotos)
 
 @blueprint.post('/checkout')
 def post_checkout():
-    # Create an order 
-
-    address = Address(
-        street=request.form('street'),
-        city=request.form('city'),
-        zip=request.form('zip'),
-        country=request.form('country'),
-        order=order, 
-    )
-    address.save()
-
-
     fotos = Foto.query.all()
-
     print(request.form)
+
     return render_template('simple_pages/new.html', fotos=fotos)
 
 @blueprint.route('/street/<slug>')
 @blueprint.route('/portrait/<slug>')
 def ind(slug):
-    foto = Foto.query.filter_by(slug=slug).first()
-    return render_template('simple_pages/ind.html', foto=foto)
+    fotos = Foto.query.filter_by(slug=slug).first()
+    return render_template('simple_pages/ind.html', fotos=fotos)
 
 
 

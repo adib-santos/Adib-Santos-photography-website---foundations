@@ -4,8 +4,23 @@
 
 {% block body %}
 
+<div class="form-2-container">
+    <form method="POST">
+        <h2>Your Order:</h2>
+        <ul>
+            {% for foto in fotos %}
+            <li>
+                <label for="foto_{{ foto.id }}">{{ foto.name }}</label>
+                <input type="number" name="{{ foto.slug }}" id="foto_{{ foto.id }}" min="0" value="0">
+            </li>
+            {% endfor %}
+        </ul>
+    </form>
+</div>
+
 <div class="form-container">
-    <form  action="GET">
+    <form  method="POST">
+        <h2>Your Address</h2>
         <div class="fstreet">
             <label for="fstreet">Street:</label>
             <input type="text" id="fstreet" name="fstreet" placeholder="Weserstrasse 14"> 
@@ -29,6 +44,8 @@
         <input type="submit" value="Purchase print">
     </form>
 </div>
+
+
 {% endblock %}
 
 
