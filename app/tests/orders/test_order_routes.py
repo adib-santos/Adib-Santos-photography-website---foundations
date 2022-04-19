@@ -1,4 +1,4 @@
-from app.models.orders import Address
+from app.models.orders import Order
 
 def test_get_checkout_renders(client): 
     # Page loads and renders checkout 
@@ -10,9 +10,11 @@ def test_post_checkout_creates_order(client):
     # Creates an order record
 
     response = client.post('/checkout', data = {
-        'street': '123 Main St', 
-        'city': 'Anytown',  
-        'zip': '12345', 
-        'country': 'Candyland'
+        'id': '1', 
+        'foto_id': '1', 
+        'street': 'Weserstrasse 14',  
+        'city': 'Berlin', 
+        'zip': '12047', 
+        'country': 'Germnay'
     })
-    assert Address.query.first() is not None
+    assert Order.query.first() is not None

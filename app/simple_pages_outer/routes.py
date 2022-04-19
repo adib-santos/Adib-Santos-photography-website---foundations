@@ -1,6 +1,6 @@
 from fileinput import filelineno
 from flask import Blueprint, render_template, redirect, url_for, send_file, request, current_app
-from app.models.orders import Foto, Order, Address
+from app.models.orders import Foto, Order
 
 
 blueprint = Blueprint('simple_pages', __name__)
@@ -40,9 +40,14 @@ def get_checkout():
 
 @blueprint.post('/checkout')
 def post_checkout():
-    fotos = Foto.query.all()
-    print(request.form)
 
+    # Create an order 
+    order = Order()
+    order.save()
+
+
+
+    fotos = Foto.query.all()
     return render_template('simple_pages/new.html', fotos=fotos)
 
 @blueprint.route('/street/<slug>')

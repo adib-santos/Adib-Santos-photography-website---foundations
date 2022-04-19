@@ -1,4 +1,4 @@
-from app.models.orders import Order, Address
+from app.models.orders import Order
 
 """ INDEX TESTS"""
 

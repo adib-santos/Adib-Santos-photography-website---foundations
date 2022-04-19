@@ -4,15 +4,10 @@ from datetime import datetime
 class Order(db.Model, CRUDMixin): 
   id = db.Column(db.Integer, primary_key = True)
   foto_id = db.Column(db.Integer, db.ForeignKey('foto.id'), nullable = False)
-  address = db.relationship('Address', backref='order', lazy = True)
-
-class Address(db.Model, CRUDMixin):     
-  id = db.Column(db.Integer, primary_key = True)
   street = db.Column(db.String(80))
   city = db.Column(db.String(80))
   zip = db.Column(db.String(80))
   country = db.Column(db.String(80))
-  order_id = db.Column(db.Integer, db.ForeignKey('order.id'), nullable = False)
 
 class Foto(db.Model, CRUDMixin): 
   id = db.Column(db.Integer, primary_key = True)
