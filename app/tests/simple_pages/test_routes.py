@@ -1,4 +1,4 @@
-from app.models.orders import Order
+from app.models.orders import Order, Address
 
 """ INDEX TESTS"""
 
@@ -28,12 +28,14 @@ def test_get_checkout_renders(client):
     response = client.get('/checkout')
     assert b'Checkout' in response.data
 
-def test_post_checkout_create_orders(client):
-    # creates an order record
+def test_post_checkout_creates_address(client): 
+    # creates an address related to the order
 
-    response = client.post('/checkout', data= {
-        'date': '14/05/2022', 
-        'address_id': 2,
-        'foto_id': '13', 
+    response = client.post('/checkout', data = {
+        'street': 'Wesertrasse 14', 
+        'city': 'Berlin', 
+        'zip': 12047, 
+        'country': 'Germany', 
     })
-    assert Order.query.first() is not None
+
+    assert Address.query.first().order_id is 1
