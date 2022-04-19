@@ -9,14 +9,14 @@
     <h1 class="title-street">Street photography</h1>
 </div>
 
-<ul>
+<div class="grid-container">
     {% for foto in fotos %}
-    <li>
+    <div class="grid-ind">
         {% if foto.genre == 'street' %}
-        <a href="/street/{{ foto.slug }}"> {{ foto.name }}</a>
+            <a class="ind-try" href="/portrait/{{ foto.slug }}"> {{ foto.name }}</a>
         {% endif %}
-    </li>
+    </div>
     {% endfor%}
-</ul>
+</div>
 
 {% endblock %}

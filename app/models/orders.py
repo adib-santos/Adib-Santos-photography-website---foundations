@@ -5,6 +5,8 @@ class Order(db.Model):
   id = db.Column(db.Integer, primary_key = True)
   date = db.Column(db.DateTime, nullable = False, default=datetime.utcnow)
   adress_id = db.Column(db.Integer, db.ForeignKey('address.id'), nullable = False)
+  foto_id = db.Column(db.Integer, db.ForeignKey('foto.id'), nullable = False)
+  users = db.relationship('User', backref='order', lazy=True)
 
 class Address(db.Model):     
   id = db.Column(db.Integer, primary_key = True)
@@ -24,13 +26,16 @@ class Foto(db.Model, CRUDMixin):
   genre = db.Column(db.String(80))
   country = db.Column(db.String(80))
   city = db.Column(db.String(80))
-
+  orders = db.relationship('Order', backref='foto', lazy = True)
+  
 
 class User(db.Model): 
   id = db.Column(db.Integer, primary_key = True)
   slug = db.Column(db.String(80), unique = True)
   name = db.Column(db.String(80))
   password = db.Column(db.String(80))
+  order_id = db.Column(db.Integer, db.ForeignKey('order.id'), nullable = False)
+
   
 
 #   slug = db.Column(db.String(80), unique = True)

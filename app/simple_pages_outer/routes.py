@@ -35,6 +35,10 @@ def ind(slug):
     foto = Foto.query.filter_by(slug=slug).first()
     return render_template('simple_pages/ind.html', foto=foto)
 
+@blueprint.route('/checkout')
+def new(): 
+    return render_template('simple_pages/new.html')
+
 
 """
 @blueprint.route('/shop')
