@@ -1,3 +1,5 @@
+from app.models.orders import Order
+
 """ INDEX TESTS"""
 
 def test_index_success(client): 
@@ -21,7 +23,17 @@ def test_street_success(client):
     response = client.get('/street')
     assert response.status_code == 200
 
-def test_new_success(client): 
-    # checkout loads 
+def test_get_checkout_renders(client):
+    # page loads and renders checkout
     response = client.get('/checkout')
-    assert response.status_code == 200
+    assert b'Checkout' in response.data
+
+def test_post_checkout_create_orders(client):
+    # creates an order record
+
+    response = client.post('/checkout', data= {
+        'date': '14/05/2022', 
+        'address_id': 2,
+        'foto_id': '13', 
+    })
+    assert Order.query.first() is not None

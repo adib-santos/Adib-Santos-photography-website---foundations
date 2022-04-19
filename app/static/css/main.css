@@ -178,12 +178,24 @@ a {
     font-size: 50px; 
 }
 
+
+/*
+    Checkout page
+*/
+
+div.form-container {
+    margin-top: 100px; 
+}
+
+
+
+
 /*
     Portrait page
 */
 
 
-/*                                              MAIN */
+/*                                 MAIN */
 
 .portrait-main-container {
     display: flex; 

@@ -1,14 +1,14 @@
 from app.extensions.database import db, CRUDMixin
 from datetime import datetime
 
-class Order(db.Model): 
+class Order(db.Model, CRUDMixin): 
   id = db.Column(db.Integer, primary_key = True)
   date = db.Column(db.DateTime, nullable = False, default=datetime.utcnow)
   adress_id = db.Column(db.Integer, db.ForeignKey('address.id'), nullable = False)
   foto_id = db.Column(db.Integer, db.ForeignKey('foto.id'), nullable = False)
   users = db.relationship('User', backref='order', lazy=True)
 
-class Address(db.Model):     
+class Address(db.Model, CRUDMixin):     
   id = db.Column(db.Integer, primary_key = True)
   street = db.Column(db.String(80))
   city = db.Column(db.String(80))

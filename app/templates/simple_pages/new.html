@@ -1,33 +1,34 @@
-{% extends 'base.html %}
+{% extends 'base.html' %}
 
 {% block title %} Adib Santos / Checkout {% endblock %}
 
 {% block body %}
 
-<form action="">
-    <div class="fstreet">
-        <label for="fstreet">Street:</label>
-        <input type="text" id="fstreet" name="fstreet" placeholder="Weserstrasse 14"> 
-    </div> 
-
-    <div class="fcity">
-        <label for="fcity">City:</label>
-        <input type="text" id="fcity" name="fcity" placeholder="Berlin">
-    </div>
-
-    <div class="fzip">
-        <label for="fzip">Zip:</label>
-        <input type="text" id="fzip" name="fzip" placeholder="12047">
-    </div>
-
-    <div class="fcountry">
-        <label for="fcountry">Country:</label>
-        <input type="text" id="fcountry" name="fcountry" placeholder="Germany">
-    </div>
-
-    <input type="submit" value="Purchase print">
-</form>
-
+<div class="form-container">
+    <form  action="GET">
+        <div class="fstreet">
+            <label for="fstreet">Street:</label>
+            <input type="text" id="fstreet" name="fstreet" placeholder="Weserstrasse 14"> 
+        </div> 
+        <br>
+        <div class="fcity">
+            <label for="fcity">City:</label>
+            <input type="text" id="fcity" name="fcity" placeholder="Berlin">
+        </div>
+        <br>
+        <div class="fzip">
+            <label for="fzip">Zip:</label>
+            <input type="text" id="fzip" name="fzip" placeholder="12047">
+        </div>
+        <br>
+        <div class="fcountry">
+            <label for="fcountry">Country:</label>
+            <input type="text" id="fcountry" name="fcountry" placeholder="Germany">
+        </div>
+        <br>
+        <input type="submit" value="Purchase print">
+    </form>
+</div>
 {% endblock %}
 
 
