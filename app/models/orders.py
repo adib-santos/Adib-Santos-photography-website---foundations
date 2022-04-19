@@ -10,7 +10,6 @@ class Order(db.Model):
 
 class Address(db.Model):     
   id = db.Column(db.Integer, primary_key = True)
-  name = db.Column(db.String(80))
   street = db.Column(db.String(80))
   city = db.Column(db.String(80))
   zip = db.Column(db.String(80))

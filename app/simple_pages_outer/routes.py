@@ -29,28 +29,15 @@ def portrait():
     all_fotos = Foto.query.all()
     return render_template('simple_pages/portrait.html', fotos = all_fotos)
 
+@blueprint.route('/checkout')
+def checkout(): 
+    return render_template('simple_pages/new.html')
+
 @blueprint.route('/street/<slug>')
 @blueprint.route('/portrait/<slug>')
 def ind(slug):
     foto = Foto.query.filter_by(slug=slug).first()
     return render_template('simple_pages/ind.html', foto=foto)
 
-@blueprint.route('/checkout')
-def new(): 
-    return render_template('simple_pages/new.html')
-
-
-"""
-@blueprint.route('/shop')
-def shop():
-    page_number = request.args.get('page', 1, type=int)
-    fotos_pagination = Foto.query.paginate(page_number, current_app.config['FOTOS_PER_PAGE']) 
-    return render_template('shop/index.html', fotos_pagination = fotos_pagination)
-
-@blueprint.route('/shop/<slug>') 
-def ind(slug): 
-    foto = Foto.query.filter_by(slug=slug).first_or_404()    
-    return render_template('/shop/ind.html', foto = foto)
-"""
 
 

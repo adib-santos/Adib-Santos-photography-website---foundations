@@ -21,3 +21,7 @@ def test_street_success(client):
     response = client.get('/street')
     assert response.status_code == 200
 
+def test_new_success(client): 
+    # checkout loads 
+    response = client.get('/checkout')
+    assert response.status_code == 200
