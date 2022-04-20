@@ -1,27 +1,32 @@
 from app.extensions.database import db 
 from app.models.orders import Foto
 
-
 """
+      Failing test # 1 
+
 def test_foto_update(client): 
-    #updates foto's properties
-    foto = Foto(id=26, slug='caro-1', name='caro', price=25,picture_url='../static/images/portrait/caro-1.jpg', genre='portrait', country='None', city='nada')
+    # updates foto's properties
+    foto  = Foto(slug = 'choco', name = 'chocolate', price = 12)
     db.session.add(foto)
     db.session.commit()
 
-    foto.price = 25
+    foto.name = 'vainilla'
     foto.save()
 
-    updated_foto = Foto.query.filter_by(slug='caro-1').first()
-    assert updated_foto.price == 25
+    updated_foto = Foto.query.filter_by(slug='choco').first()
+    assert updated_foto.name == 'vainilla'
 
 
-def test_foto_delete(client): 
-    # delete a foto
-    foto = Foto(id=26, slug='caro-1', name='caro', price=25,picture_url='../static/images/portrait/caro-1.jpg', genre='portrait', country='None', city='nada')
+      Failing test # 2 
 
-    foto.delete()
+def test_cookie_delete(client):
+  # deletes cookie
+  foto = Foto(slug='butter', name='Butter', price=1.50)
+  db.session.add(foto)
+  db.session.commit()
 
-    deleted_foto = Foto.querry.filter_by(slug='caro-1').first()
-    assert deleted_foto is None
+  foto.delete()
+
+  deleted_foto = Foto.query.filter_by(slug='butter').first()
+  assert deleted_foto is None
 """

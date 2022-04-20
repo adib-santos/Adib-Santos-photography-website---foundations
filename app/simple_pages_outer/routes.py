@@ -42,9 +42,14 @@ def get_checkout():
 def post_checkout():
 
     # Create an order 
-    order = Order()
     order.save()
-
+    order = Order(
+        street=request.form.get('street'),
+        city=request.form.get('city'),
+        zip=request.form.get('zip'),
+        country=request.form.get('country'),
+        foto_id = foto_id
+      )
 
 
     fotos = Foto.query.all()

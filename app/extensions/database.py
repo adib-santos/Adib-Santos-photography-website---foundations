@@ -6,15 +6,16 @@ from flask_migrate import Migrate
 db = SQLAlchemy()
 migrate = Migrate()
 
-
-class CRUDMixin(): 
+class CRUDMixin():
 
     def save(self):
         db.session.add(self)
         db.session.commit()
         return self
 
-    def delete(self): 
+    def delete(self):
         db.session.delete(self)
         db.session.commit()
-        return 
+        return
+        
+

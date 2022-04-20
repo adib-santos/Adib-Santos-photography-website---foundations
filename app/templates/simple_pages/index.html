@@ -6,11 +6,18 @@
 
 
   <!-- Here goes the carrousel for -->
-  <img src="/static/images/street/reflection-1-color.jpg" class="carrousel">
+<div class="options">
+  <a href="/street"> <img class="img-1" src="/static/images/street/reflection-2.jpg"></a>
+  <a href="/portrait"><img class="img-2" src="/static/images/portrait/isa.JPG"></a>
+</div>
 
-  <ul class="cta">
-    <a class="cta-color" href="portrait"><li class="cta-links" >Portraits</li></a>
-    <a class="cta-color" href="street   "><li class="cta-links" >Street</li></a>
-  </ul>
+
   
 {% endblock %}
+.options {
+  border: 1px solid black; 
+  position: 
+
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+}
