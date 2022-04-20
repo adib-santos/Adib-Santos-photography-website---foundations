@@ -77,32 +77,35 @@ h1, h3{
 /* 
     IND  
 */ 
-
-
-.ind {
-}
-
+ 
 .ind-container {
+
+    margin-top: 2%; 
     display: flex; 
     justify-content: center;
+
 }
-.ind-img {
-    max-width: 400px; 
-    margin-top: 5%; 
+.ind-container img {
+    width: 450px; 
 }
 
 .ind-info-container {
+    padding: 50px; 
     display: static; 
 }
 .ind-lugar {
     position: relative; 
-    top: 100px; 
 }
 
 .ind-precio {
+
     display: relative; 
-    top: 150px; 
 }
+
+.form-container {
+    margin-top: 50px; 
+}
+
 /* 
     ABOUT 
 */ 
@@ -199,9 +202,7 @@ a {
     Checkout page
 */
 
-div.form-container {
-    margin-top: 100px; 
-}
+
 
 
 
@@ -234,6 +235,7 @@ div.form-container {
     position: relative; 
     left: 90px; 
 }
+
 /*  RESPONSIVE GRID */
 
 .grid-container {
@@ -248,6 +250,7 @@ div.form-container {
 .grid-ind img {
     max-width: 400px;
 }
+
 
 @media only screen and (max-width: 1150px) {
     .grid-container {
