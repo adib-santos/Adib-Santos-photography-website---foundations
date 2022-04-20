@@ -51,12 +51,6 @@ def ind(name):
     )
     order.save()
 
-    """
-    db.session.add(order)
-    db.session.commit()    
-    """
-
-    print(request.form.get('fstreet'))
     return render_template('simple_pages/ind.html', fotos=fotos)
 
 
