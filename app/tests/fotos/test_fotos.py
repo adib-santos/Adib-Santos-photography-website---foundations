@@ -17,7 +17,7 @@ def test_foto_update(client):
     updated_foto = Foto.query.filter_by(slug='choco').first()
     assert updated_foto.name == 'vainilla'
 """
-
+# test 7
 def test_cookie_delete(client):
   # deletes cookie
   foto = Foto(slug='butter', name='Butter', price=1.50)

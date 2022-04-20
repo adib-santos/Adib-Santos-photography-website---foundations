@@ -2,6 +2,8 @@ from crypt import methods
 from fileinput import filelineno
 from flask import Blueprint, render_template, redirect, url_for, send_file, request, current_app
 from app.models.orders import Foto, Order
+from app.extensions.database import db
+from app.extensions.database import CRUDMixin
 
 
 blueprint = Blueprint('simple_pages', __name__)
@@ -38,6 +40,21 @@ def portrait():
 @blueprint.route('/portrait/<name>', methods=['GET', 'POST'])
 def ind(name):
     fotos = Foto.query.filter_by(name=name).first()
+
+    # Create an order 
+    order = Order(
+        street = request.form.get('fstreet'), 
+        city = request.form.get('fcity'),
+        zip = request.form.get('fzip'),
+        country = request.form.get('fcountry'),
+        foto_id = request.form.get('ffoto_id')
+    )
+    order.save()
+
+    """
+    db.session.add(order)
+    db.session.commit()    
+    """
 
     print(request.form.get('fstreet'))
     return render_template('simple_pages/ind.html', fotos=fotos)

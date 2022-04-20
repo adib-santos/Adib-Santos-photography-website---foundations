@@ -7,7 +7,7 @@ class Order(db.Model, CRUDMixin):
   city = db.Column(db.String(80))
   zip = db.Column(db.String(80))
   country = db.Column(db.String(80))
-  foto_id = db.Column(db.Integer, db.ForeignKey('foto.id'), nullable = False)
+  foto_id = db.Column(db.Integer)
 
 class Foto(db.Model, CRUDMixin): 
   id = db.Column(db.Integer, primary_key = True)
@@ -18,10 +18,11 @@ class Foto(db.Model, CRUDMixin):
   genre = db.Column(db.String(80))
   country = db.Column(db.String(80))
   city = db.Column(db.String(80))
-  orders = db.relationship('Order', backref='foto', lazy = True)
 
 class User(db.Model): 
   id = db.Column(db.Integer, primary_key = True)
   slug = db.Column(db.String(80), unique = True)
   name = db.Column(db.String(80))
   password = db.Column(db.String(80))
+
+#   foto_id = db.Column(db.Integer, db.ForeignKey('foto.id'), nullable = False)
