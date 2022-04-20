@@ -1,8 +1,7 @@
 from app.extensions.database import db 
 from app.models.orders import Foto
 
-"""
-      Failing test # 1 
+
 
 def test_foto_update(client): 
     # updates foto's properties
@@ -17,8 +16,6 @@ def test_foto_update(client):
     assert updated_foto.name == 'vainilla'
 
 
-      Failing test # 2 
-
 def test_cookie_delete(client):
   # deletes cookie
   foto = Foto(slug='butter', name='Butter', price=1.50)
@@ -29,4 +26,3 @@ def test_cookie_delete(client):
 
   deleted_foto = Foto.query.filter_by(slug='butter').first()
   assert deleted_foto is None
-"""

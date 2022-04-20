@@ -42,23 +42,23 @@ def get_checkout():
 def post_checkout():
 
     # Create an order 
-    order.save()
     order = Order(
         street=request.form.get('street'),
         city=request.form.get('city'),
         zip=request.form.get('zip'),
         country=request.form.get('country'),
-        foto_id = foto_id
+        foto_id = request.form.get('foto_id')
+        
       )
 
 
     fotos = Foto.query.all()
     return render_template('simple_pages/new.html', fotos=fotos)
 
-@blueprint.route('/street/<slug>')
-@blueprint.route('/portrait/<slug>')
-def ind(slug):
-    fotos = Foto.query.filter_by(slug=slug).first()
+@blueprint.route('/street/<name>')
+@blueprint.route('/portrait/<name>')
+def ind(name):
+    fotos = Foto.query.filter_by(name=name).first()
     return render_template('simple_pages/ind.html', fotos=fotos)
 
 
