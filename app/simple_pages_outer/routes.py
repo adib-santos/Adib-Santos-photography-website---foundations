@@ -1,3 +1,4 @@
+from crypt import methods
 from fileinput import filelineno
 from flask import Blueprint, render_template, redirect, url_for, send_file, request, current_app
 from app.models.orders import Foto, Order
@@ -32,26 +33,13 @@ def portrait():
 
 """ Special routes """
 
-@blueprint.get('/checkout')
-def get_checkout():
-    fotos = Foto.query.all()
-
-    return render_template('simple_pages/new.html', fotos = fotos)
-
-@blueprint.post('/ind')
-def post_checkout():
-    fotos = Foto.query.all()
-
-    street = request.form.get('fstreet')
-    zip = request.form.get('fzip')
-    country = request.form.get('fcountry')
-
-    return render_template('simple_pages/ind.html', fotos=fotos)
-
-@blueprint.route('/street/<name>')
-@blueprint.route('/portrait/<name>')
+# Normal rendering of the simple_pages/ind.html
+@blueprint.route('/street/<name>', methods=['GET', 'POST'])
+@blueprint.route('/portrait/<name>', methods=['GET', 'POST'])
 def ind(name):
     fotos = Foto.query.filter_by(name=name).first()
+
+    print(request.form.get('fstreet'))
     return render_template('simple_pages/ind.html', fotos=fotos)
 
 
