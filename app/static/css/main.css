@@ -157,14 +157,12 @@ h1, h3{
 .img-1 {
     max-width: 400px;
     margin-left: 50px; 
-    box-shadow: 10px 10px 5px #ccc;
 
 
 }
 
 .img-2 {
     max-width: 450px;
-    box-shadow: 10px 10px -5px #ccc;
 
 }
 
