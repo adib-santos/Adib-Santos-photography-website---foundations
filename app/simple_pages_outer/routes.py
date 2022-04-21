@@ -28,6 +28,9 @@ def portrait():
     all_fotos = Foto.query.all()
     return render_template('simple_pages/portrait.html', fotos = all_fotos)
 
+@blueprint.route('/login')
+def login(): 
+    return render_template('simple_pages/login.html')
 
 """ Special routes """
 
@@ -36,6 +39,8 @@ def portrait():
 @blueprint.route('/portrait/<name>', methods=['GET', 'POST'])
 def ind(name):
     fotos = Foto.query.filter_by(name=name).first()
+
+    # Exception handling 
 
     # Create an order 
     order = Order(

@@ -35,3 +35,12 @@ def test_ind_portrait_success(client):
     # Ind loads 
     response = client.get('/portrait/<name>')
     assert response.status_code == 200
+
+"""
+# test 7
+
+def test_login_success(client): 
+    # login loads 
+    response = client.get('/login')
+    assert response.status_code == 200
+"""
