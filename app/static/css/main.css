@@ -106,51 +106,17 @@ h1, h3{
     margin-top: 50px; 
 }
 
-/* 
-    ABOUT 
-*/ 
 
-.about-container {
-
-    display: flex; 
-    justify-content: center;
- 
-}
-.selfie {
-    width: 30%;
-    margin-left: 300px; 
-    margin-top: 30px; 
-}
-
-.sub-about-text {
-    margin-right: 20px;
-    margin-left: 40px;
-    margin-top: 50px;
-}
-
-.bout-me {
-    width: 50%;
-    font-size: 25px;
-}
-
-.me-description {
-    width: 50%;;
-}
-
-.text {
-    margin-top: 100px;
-}
 
 /*
     HOME PAGE
 */
 
 .options {
+    height: 100vh;
     margin-top: 30px; 
     display: flex; 
     justify-content: center;
-
-    grid-template-columns: 1fr 1fr;
 }
 
 .options img {
@@ -159,16 +125,41 @@ h1, h3{
 
 .img-1 {
     max-width: 400px;
-    margin-left: 50px; 
-
-
+    padding: 0px; 
 }
 
 .img-2 {
     max-width: 450px;
+    margin: 0 auto; 
 
 }
 
+@media only screen and (max-width: 1150px) {
+
+    .img-1 {
+        max-width: 300px; 
+    }
+
+    .img-2 {
+        max-width: 350px; 
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .options {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+    .img-1 {
+        max-width: 400px; 
+    }
+
+    .img-2 {
+        max-width: 450px; 
+    }
+}
 
 
 .cta {
@@ -196,16 +187,6 @@ a {
     margin-top: 10%; 
     font-size: 50px; 
 }
-
-
-/*
-    Checkout page
-*/
-
-
-
-
-
 
 /*
     Portrait page

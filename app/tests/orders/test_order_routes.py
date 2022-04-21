@@ -1,7 +1,7 @@
 from app.models.orders import Order
 
 
-# test 7.1
+# test 6.1
 def test_post_checkout_portrait_creates_order(client): 
 
     # Creates an order record
@@ -15,7 +15,7 @@ def test_post_checkout_portrait_creates_order(client):
     })
     assert Order.query.first() is not None
 
-# test 7.2
+# test 6.2
 def test_post_checkout_street_creates_order(client): 
 
     # Creates an order record

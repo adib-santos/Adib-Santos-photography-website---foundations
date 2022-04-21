@@ -18,10 +18,6 @@ def receipt():
 
 """ NAV BAR """
 
-@blueprint.route('/about')
-def about(): 
-    return render_template('simple_pages/about.html')
-
 @blueprint.route('/street')
 def street(): 
     all_fotos = Foto.query.all()
