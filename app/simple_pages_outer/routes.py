@@ -12,10 +12,6 @@ blueprint = Blueprint('simple_pages', __name__)
 def index(): 
     return render_template('simple_pages/index.html')
 
-@blueprint.route('/receipt.txt')
-def receipt(): 
-    return send_file('static/downloads/receipt.txt', as_attachment = True)
-
 """ NAV BAR """
 
 @blueprint.route('/street')
@@ -27,10 +23,6 @@ def street():
 def portrait(): 
     all_fotos = Foto.query.all()
     return render_template('simple_pages/portrait.html', fotos = all_fotos)
-
-@blueprint.route('/login')
-def login(): 
-    return render_template('simple_pages/login.html')
 
 @blueprint.route('/orders')
 def orders(): 

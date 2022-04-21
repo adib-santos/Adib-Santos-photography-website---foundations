@@ -1,7 +1,8 @@
 import logging
 from unittest import skip
 from flask import Flask
-from . import simple_pages_outer, models
+from app.users import models
+from . import simple_pages_outer, models, users
 from app.extensions.database import db, migrate
 from app.config import SQLALCHEMY_DATABASE_URI
 
@@ -18,7 +19,7 @@ def create_app():
 # Blueprints
 def register_blueprints(app: Flask): 
     app.register_blueprint(simple_pages_outer.routes.blueprint)
-
+    app.register_blueprint(users.routes.blueprint)
 # Database
 def register_extensions(app: Flask): 
     db.init_app(app)    # -> Initializes the database connection of SQLAlchemy 

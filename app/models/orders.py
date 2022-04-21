@@ -18,10 +18,6 @@ class Foto(db.Model, CRUDMixin):
   country = db.Column(db.String(80))
   city = db.Column(db.String(80))
 
-class User(db.Model): 
-  id = db.Column(db.Integer, primary_key = True)
-  slug = db.Column(db.String(80), unique = True)
-  name = db.Column(db.String(80))
-  password = db.Column(db.String(80))
+
 
 #   foto_id = db.Column(db.Integer, db.ForeignKey('foto.id'), nullable = False)
