@@ -32,6 +32,10 @@ def portrait():
 def login(): 
     return render_template('simple_pages/login.html')
 
+@blueprint.route('/orders')
+def orders(): 
+    return render_template('simple_pages/orders.html')
+
 """ Special routes """
 
 # Normal rendering of the simple_pages/ind.html

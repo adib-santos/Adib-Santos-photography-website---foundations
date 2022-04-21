@@ -34,11 +34,12 @@ nav {
     margin-left: 1.5rem; 
 }
 
-.shop {
-    padding: 5px; 
-    border: 1px solid #786E4C; 
-    border-radius: 9px;
+
+.about {
+    border: 0.5px solid #786E4C;
+    padding: 5px 10px 5px 10px; 
 }
+
 
 
 
@@ -47,7 +48,7 @@ nav {
     font-size: 16.3px;
 }
 
-.shop:hover {
+.about:hover {
     border: 1px solid black; 
 }
 
@@ -106,8 +107,6 @@ h1, h3{
     margin-top: 50px; 
 }
 
-
-
 /*
     HOME PAGE
 */
@@ -131,7 +130,6 @@ h1, h3{
 .img-2 {
     max-width: 450px;
     margin: 0 auto; 
-
 }
 
 @media only screen and (max-width: 1150px) {
@@ -327,10 +325,17 @@ a {
     }
 }
 
+@media only screen and (max-width: 650px) {
+    .order {
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .about{
         display: none; 
     }
+
 
     .item {
         font-size: 14px; 
