@@ -18,10 +18,20 @@
             <a href="/street"><li class="item">Street</li></a>
             <a href="/orders"><li class="item order">Orders</li></a>
             <a href="/login"><li class="item about">Login</li></a>
+            
+            {% if current_user.is_authenticated %}
+            <small>
+              Logged in as {{ current_user.email }}. 
+              <a href="{{ url_for('users.logout') }}"><li class="item about">Logout</li></a>
+            </small>
+            
+            {% endif %}
           </ul>
       </nav>
-    {% block body %}
-    {% endblock %}
+
+      {% block body %}
+      {% endblock %}
+
 </body>
 </html>
 

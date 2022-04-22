@@ -4,6 +4,8 @@ from flask import Blueprint, render_template, redirect, url_for, send_file, requ
 from app.models.orders import Foto, Order
 from app.extensions.database import db
 from app.extensions.database import CRUDMixin
+from flask_login import login_required
+from flask_login import login_user
 
 
 blueprint = Blueprint('simple_pages', __name__)
@@ -25,7 +27,9 @@ def portrait():
     return render_template('simple_pages/portrait.html', fotos = all_fotos)
 
 @blueprint.route('/orders')
+@login_required
 def orders(): 
+    
     return render_template('simple_pages/orders.html')
 
 """ Special routes """

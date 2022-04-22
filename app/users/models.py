@@ -1,6 +1,7 @@
 from app.extensions.database import CRUDMixin, db
+from flask_login import UserMixin
 
-class User(db.Model, CRUDMixin): 
+class User(db.Model, CRUDMixin, UserMixin): 
     id = db.Column(db.Integer, primary_key = True)
-    email = db.Column(db.String(80), index = True, primary_key = True)
+    email = db.Column(db.String(80), index = True)
     password = db.Column(db.String(120))
