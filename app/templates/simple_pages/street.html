@@ -11,11 +11,9 @@
 
 <div class="grid-container">
     {% for foto in fotos %}
-    <div class="grid-ind">
-        {% if foto.genre == 'street' %}
-            <a class="ind-try" href="/portrait/{{ foto.name }}"> <img src="{{ foto.picture_url }}"></a>
-        {% endif %}
-    </div>
+        <div class="grid-ind">
+        <a class="ind-try" href="/portrait/{{ foto.name }}"> <img src="{{ foto.picture_url }}"></a>
+        </div>
     {% endfor%}
 </div>
 

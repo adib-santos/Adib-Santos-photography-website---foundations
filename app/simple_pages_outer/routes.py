@@ -5,7 +5,6 @@ from app.models.orders import Foto, Order
 from app.extensions.database import db
 from app.extensions.database import CRUDMixin
 from flask_login import login_required
-from flask_login import login_user
 
 
 blueprint = Blueprint('simple_pages', __name__)
@@ -18,12 +17,12 @@ def index():
 
 @blueprint.route('/street')
 def street(): 
-    all_fotos = Foto.query.all()
+    all_fotos = Foto.query.filter_by(genre='street')
     return render_template('simple_pages/street.html', fotos = all_fotos)
 
 @blueprint.route('/portrait')
 def portrait(): 
-    all_fotos = Foto.query.all()
+    all_fotos = Foto.query.filter_by(genre='portrait')
     return render_template('simple_pages/portrait.html', fotos = all_fotos)
 
 @blueprint.route('/orders')
@@ -40,8 +39,7 @@ def orders():
 def ind(name):
     fotos = Foto.query.filter_by(name=name).first()
 
-    # Exception handling 
-
+    
     # Create an order 
     order = Order(
         street = request.form.get('fstreet'), 

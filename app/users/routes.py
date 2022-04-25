@@ -26,7 +26,7 @@ def post_register():
         user.save()
         
         login_user(user)
-        return redirect(url_for('users.get_login'))
+        return redirect(url_for('simple_pages.index'))
     except Exception as error_message: 
         error = error_message or 'An error eccurred while creating a user. Please make sure to enter valid data'
         return render_template('users/register.html', error=error)
@@ -42,7 +42,7 @@ def post_login():
 
     if not user:
       raise Exception('No user with the given email address was found.')
-    elif check_password_hash(request.form.get('password'), user.password):
+    elif not check_password_hash(user.password, request.form.get('password')):
       raise Exception('The password does not appear to be correct.')
     
     login_user(user)
