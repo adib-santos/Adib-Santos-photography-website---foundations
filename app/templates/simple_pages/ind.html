@@ -2,9 +2,7 @@
 
 {% block title %} Portrait / Adib Santos {% endblock %}
 
-
 {% block body %}
-
 
 <div class="ind-container">
     <img  src="{{ fotos.picture_url }}">
@@ -40,7 +38,7 @@
                 </div>
                 <br>
                 <div class="fuser">
-                    <input type="hidden" id="fuser" name="fuser" value=" {{ current_user.email }}">
+                    <input type="hidden" id="fuser" name="fuser" value=" {{ current_user.id }}">
                 </div>
                 <input type="submit" value="Buy">
 

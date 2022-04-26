@@ -1,5 +1,4 @@
 from app.extensions.database import db, CRUDMixin
-from datetime import datetime
 
 class Order(db.Model, CRUDMixin): 
   id = db.Column(db.Integer, primary_key = True)
@@ -8,7 +7,7 @@ class Order(db.Model, CRUDMixin):
   zip = db.Column(db.String(80))
   country = db.Column(db.String(80))
   foto_id = db.Column(db.Integer)
-  user = db.Column(db.String(80))
+  user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class Foto(db.Model, CRUDMixin): 
   id = db.Column(db.Integer, primary_key = True)
@@ -18,8 +17,10 @@ class Foto(db.Model, CRUDMixin):
   genre = db.Column(db.String(80))
   country = db.Column(db.String(80))
   city = db.Column(db.String(80))
+  user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
 
-#   foto_id = db.Column(db.Integer, db.ForeignKey('foto.id'), nullable = False)
-# let's find out how the foto_id is called 
+
+
+ 

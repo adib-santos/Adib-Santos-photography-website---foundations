@@ -2,6 +2,7 @@ from crypt import methods
 from fileinput import filelineno
 from flask import Blueprint, render_template, redirect, url_for, send_file, request, current_app
 from app.models.orders import Foto, Order
+from app.users.models import User
 from app.extensions.database import db
 from app.extensions.database import CRUDMixin
 from flask_login import current_user, login_required
@@ -27,9 +28,9 @@ def portrait():
 
 @blueprint.route('/orders')
 @login_required
-def orders(user): 
-    all_orders = Order.query.filter_by(user = user) # o (user = current_user)
-    return render_template('simple_pages/orders.html', orders = all_orders)
+def orders(): 
+    all_fotos = Foto.query.all()
+    return render_template('simple_pages/orders.html', fotos = all_fotos )
 
 """ Special routes """
 
@@ -47,7 +48,7 @@ def ind(name):
             zip = request.form.get('fzip'),
             country = request.form.get('fcountry'),
             foto_id = request.form.get('ffoto_id'), 
-            user = request.form.get('fuser'), 
+            user_id = request.form.get('fuser'), 
         )
         order.save()
 
