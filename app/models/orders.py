@@ -8,6 +8,7 @@ class Order(db.Model, CRUDMixin):
   zip = db.Column(db.String(80))
   country = db.Column(db.String(80))
   foto_id = db.Column(db.Integer)
+  user = db.Column(db.String(80))
 
 class Foto(db.Model, CRUDMixin): 
   id = db.Column(db.Integer, primary_key = True)
@@ -21,3 +22,4 @@ class Foto(db.Model, CRUDMixin):
 
 
 #   foto_id = db.Column(db.Integer, db.ForeignKey('foto.id'), nullable = False)
+# let's find out how the foto_id is called 

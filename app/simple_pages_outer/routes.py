@@ -4,7 +4,7 @@ from flask import Blueprint, render_template, redirect, url_for, send_file, requ
 from app.models.orders import Foto, Order
 from app.extensions.database import db
 from app.extensions.database import CRUDMixin
-from flask_login import login_required
+from flask_login import current_user, login_required
 
 
 blueprint = Blueprint('simple_pages', __name__)
@@ -27,30 +27,28 @@ def portrait():
 
 @blueprint.route('/orders')
 @login_required
-def orders(): 
-    all_orders = Foto.query.filter_by()
-    return render_template('simple_pages/orders.html')
+def orders(user): 
+    all_orders = Order.query.filter_by(user = user) # o (user = current_user)
+    return render_template('simple_pages/orders.html', orders = all_orders)
 
 """ Special routes """
 
-# Normal rendering of the simple_pages/ind.html
 @blueprint.route('/street/<name>', methods=['GET', 'POST'])
 @blueprint.route('/portrait/<name>', methods=['GET', 'POST'])
 def ind(name):
     fotos = Foto.query.filter_by(name=name).first()
 
-    
-    # Create an order 
-    order = Order(
-        street = request.form.get('fstreet'), 
-        city = request.form.get('fcity'),
-        zip = request.form.get('fzip'),
-        country = request.form.get('fcountry'),
-        foto_id = request.form.get('ffoto_id')
-    )
-    order.save()
+    if request.method =='POST': 
+
+        # Create an order 
+        order = Order(
+            street = request.form.get('fstreet'), 
+            city = request.form.get('fcity'),
+            zip = request.form.get('fzip'),
+            country = request.form.get('fcountry'),
+            foto_id = request.form.get('ffoto_id'), 
+            user = request.form.get('fuser'), 
+        )
+        order.save()
 
     return render_template('simple_pages/ind.html', fotos=fotos)
-
-
-
