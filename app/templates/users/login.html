@@ -1,29 +1,31 @@
 {% extends 'base.html' %}
 
-{% block title %} Register / Adib Santos{% endblock %}
+{% block title %} Log in / Adib Santos{% endblock %}
 
 {% block body %}
-  <h1>Register</h1>
 
-  <form method="POST">
-    <div>
-      <label for="email">E mail</label>
-      <input type="text" name="email" id="email" required>
-    </div>
-
-    <div>
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" required>
-    </div>
-    
-    <input type="submit" value="Log in">
-  </form>  
-
-  <h4>Haven't registered yet?</h4>
-  <a class="about" href="/register">Register</a>
+<div class="login-form">
+    <form method="POST">
+      <div>
+        <label for="email">E mail</label>
+        <input type="text" name="email" id="email" required>
+      </div>
+      <br>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+      <br>
+      <input type="submit" value="Log in">
+      <h4>Haven't registered yet?</h4>
+      <a class="about" href="/register">Register</a>
+    </form>
+  </div>  
 
 
   {% if error %}
     <p style="color: black;">{{ error }}</p>
   {% endif %}
+
+
 {% endblock %}

@@ -8,12 +8,15 @@
         <title>{% block title %} Adib Santos {% endblock %}</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <script src="/js/main.js"></script>
+        
     {% endblock %}
 </head>
 <body>
     <nav>
         <a href="/"><h1 id="title"><img class="logo" src="/static/images/foto-logo-black.png" ></h1></a>
           <ul class="nav-bar">
+            <a target="_blank" href="https://www.instagram.com/_adib_santos_/" ><li class="item">Instagram</li></a>
             <a href="/portrait"><li class="item">Portrait</li></a>
             <a href="/street"><li class="item">Street</li></a>
             <a href="/orders"><li class="item order">Orders</li></a>

@@ -3,28 +3,32 @@
 {% block title %} Login | Adib Santos {% endblock %}
 
 {% block body %}
-  <h1>Register</h1>
 
+<div class="register-form">
   <form method="POST">
     <div>
       <label for="email">Email</label>
       <input type="email" name="email" id="email" required>
     </div>
-
+    <br>
     <div>
       <label for="password">Password</label>
       <input type="password" name="password" id="password" required>
     </div>
-
+    <br>
     <div>
       <label for="password_confirmation">Password Confirmation</label>
       <input type="password" name="password_confirmation" id="password_confirmation" required>
     </div>
-    
+    <br>
     <input type="submit" value="Sign Up">
   </form>  
+</div>
+
 
   {% if error %}
     <p style="color: black;">{{ error }}</p>
   {% endif %}
+
+
 {% endblock %}
