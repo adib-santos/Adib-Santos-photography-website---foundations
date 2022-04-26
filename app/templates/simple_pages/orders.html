@@ -6,12 +6,9 @@
 
 <h1 class="title">my orders</h1>
 
+
 {% for i in current_user.orders %}
     <p>Foto id: {{ i.foto_id }} </p>
-    <p>Order city: {{ i.city }}</p>
 {% endfor %}
-
-<p>{{ current_user.fotos }}</p>
-<p>{{ current_user.orders }}</p>
 
 {% endblock %}

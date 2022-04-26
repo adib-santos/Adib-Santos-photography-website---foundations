@@ -51,5 +51,7 @@ def ind(name):
             user_id = request.form.get('fuser'), 
         )
         order.save()
+        
+        return redirect(url_for('simple_pages.orders'))
 
     return render_template('simple_pages/ind.html', fotos=fotos)
