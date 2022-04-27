@@ -6,7 +6,7 @@ class Order(db.Model, CRUDMixin):
   city = db.Column(db.String(80))
   zip = db.Column(db.String(80))
   country = db.Column(db.String(80))
-  foto_id = db.Column(db.Integer)
+  foto_id = db.Column(db.Integer, db.ForeignKey('foto.id'))
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class Foto(db.Model, CRUDMixin): 
@@ -18,6 +18,9 @@ class Foto(db.Model, CRUDMixin):
   country = db.Column(db.String(80))
   city = db.Column(db.String(80))
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+  orders = db.relationship('Order', backref='foto')
+
+
 
 
 

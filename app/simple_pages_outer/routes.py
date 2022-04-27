@@ -29,8 +29,8 @@ def portrait():
 @blueprint.route('/orders')
 @login_required
 def orders(): 
-    all_fotos = Foto.query.all()
-    return render_template('simple_pages/orders.html', fotos = all_fotos )
+    orders = current_user.orders
+    return render_template('simple_pages/orders.html', orders = orders )
 
 """ Special routes """
 

@@ -6,4 +6,3 @@ class User(db.Model, CRUDMixin, UserMixin):
     email = db.Column(db.String(80), index = True)
     password = db.Column(db.String(120))
     orders = db.relationship('Order', backref='user')
-    fotos = db.relationship('Foto', backref='user')
