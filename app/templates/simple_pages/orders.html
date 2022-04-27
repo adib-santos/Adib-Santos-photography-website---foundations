@@ -6,9 +6,12 @@
 
 <h1 class="title">my orders</h1>
 
-{% for order in orders %}
-    <p>Foto id: {{ order.foto.picture_url }} </p>
-{% endfor %}
+<div class="order-img-container">
+    {% for order in orders %}
+        <img class="order-img" src="{{ order.foto.picture_url }}">
+    {% endfor %}
+</div>
+
 
 
 {% endblock %}
