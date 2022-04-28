@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %} Adib Santos {% endblock %}</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+        <script defer src="{{url_for('static', filename='js/main.js') }}"></script>
     {% endblock %}
 </head>
 <body>
@@ -19,17 +20,23 @@
             <a href="/street"><li class="item">Street</li></a>
             <a href="/orders"><li class="item order">Orders</li></a>
             <a href="/login"><li class="item about">Login</li></a>
-            
+
             {% if current_user.is_authenticated %}
-            <small>
-              Logged in as {{ current_user.email }}. 
-              <a href="{{ url_for('users.logout') }}"><li class="item about">Logout</li></a>
-            </small>
-            
+              <small>
+                Logged in as {{ current_user.email }}. 
+                <a href="{{ url_for('users.logout') }}"><li class="item about">Logout</li></a>
+              </small>
             {% endif %}
+
+            <div>
+              <input type="checkbox" class="checkbox" id="checkbox">
+              <label for="checkbox" class="label"></label>
+            </div>
+
           </ul>
       </nav>
-
+      
+      
       {% block body %}
       {% endblock %}
 
