@@ -6,15 +6,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %} Adib Santos {% endblock %}</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+        <link id="style-1" rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
         <script defer src="{{url_for('static', filename='js/main.js') }}"></script>
     {% endblock %}
 </head>
 <body>
-    <nav>
-        <a href="/"><h1 id="title"><img class="logo" src="/static/images/foto-logo-black.png" ></h1></a>
+    <nav id="testing">
+        <a href="/"><h1 id="title"><img  src="/static/images/foto-logo-black.png" id="logo" ></h1></a>
           <ul class="nav-bar">
+            <img src="/static/images/moon.png" id="icon">
             <a target="_blank" href="https://www.instagram.com/_adib_santos_/" ><li class="item">Instagram</li></a>
             <a href="/portrait"><li class="item">Portrait</li></a>
             <a href="/street"><li class="item">Street</li></a>
@@ -27,11 +28,6 @@
                 <a href="{{ url_for('users.logout') }}"><li class="item about">Logout</li></a>
               </small>
             {% endif %}
-
-            <div>
-              <input type="checkbox" class="checkbox" id="checkbox">
-              <label for="checkbox" class="label"></label>
-            </div>
 
           </ul>
       </nav>

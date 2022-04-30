@@ -1,9 +1,13 @@
+var icon = document.getElementById('icon'); 
+var logo = document.getElementById('logo'); 
 
-const checkbox = document.getElementById('checkbox'); 
-
-checkbox.addEventListener('change', () => {
-    // change the theme of the website
-    document.body.classList.toggle('dark'); 
+icon.addEventListener('click', function(event) {
+    document.body.classList.toggle('dark-theme');
+    if (document.body.classList.contains('dark-theme')) {
+        icon.src = '/static/images/sun.png'; 
+        logo.src = '/static/images/logo-white.png'; 
+    } else {
+        icon.src = '/static/images/moon.png'; 
+        logo.src = '/static/images/logo-black.png'; 
+    }
 })
-
-console.log('helo test')

@@ -1,12 +1,23 @@
+:root {
+    --primary-color: #F2F0EB; 
+    --second-color: #786E4C; 
+    --shadow: #ccc; 
+}
+
+.dark-theme {
+    --primary-color: #322E20;
+    --second-color: #F2F0EB; 
+    --shadow: #1C2021; 
+}
 * {
-    background-color: #F2F0EB;
     font-family: 'Montserrat', serif; 
-    color: #786E4C; 
+    color: var(--second-color); 
 }
 
 body {
     margin: 0; 
     padding: 0; 
+    background-color: var(--primary-color);
 }
 
 .item:hover {
@@ -40,6 +51,11 @@ nav {
     margin-top: 20px;
 }
 
+nav ul img {
+    width: 30px; 
+    cursor: pointer; 
+}
+
 .nav-bar {
     padding: 30px; 
     margin-right: 10px; 
@@ -52,7 +68,7 @@ nav {
 }
 
 .about {
-    border: 0.5px solid #786E4C;
+    border: 0.5px solid var(--second-color);
     padding: 5px 10px 5px 10px; 
 }
 
@@ -74,7 +90,7 @@ nav {
     width: 300px; 
 }
 
-.logo {
+#logo {
     position: static; 
     text-decoration: none;
     max-width: 200px;
@@ -206,7 +222,7 @@ h1, h3{
 
 .portrait-main {
     max-width: 500px; 
-    box-shadow: 10px 10px 5px #ccc;
+    box-shadow: 10px 10px 5px var(--shadow);
     position: relative; 
     left: 90px; 
 }
@@ -288,7 +304,7 @@ h1, h3{
     margin-top: 0.5%; 
     position: relative; 
     right: 170px; 
-    box-shadow: 10px 10px 5px #ccc;
+    box-shadow: 10px 10px 5px var(--shadow);
 }
 
 
@@ -390,46 +406,17 @@ h1, h3{
 
 .specific {
     width: 15%;
-    border: 1px solid #786E4C; 
+    border: 1px solid var(--second-color); 
     border-radius: 5px;
     margin: 20px;
 }
 
 .specific:hover {
-    background-color: #786E4C;
+    background-color: var(--second-color);
 }
 
-
-/* DARK MODE TOGGLING */ 
-
-.label {
-    width: 25px; 
-    border: 0.5px solid #786E4C; 
-    height: 25px;
-    border-radius: 50px;
-    display: flex;
-    position: relative; 
-}
-
-.checkbox {
-    position: absolute; 
-    opacity: 0; 
-}
 
 /*
-.checkbox:checked + label{
-    background-color: #786E4C;
-}
+    Dark mode
 */ 
 
-*.dark {
-    background-color: #786E4C;
-}
-
-p.dark {
-    color: #F2F0EB; 
-}
-
-h1.dark {
-    color: #F2F0EB; 
-}
