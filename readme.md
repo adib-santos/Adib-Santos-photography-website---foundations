@@ -26,5 +26,7 @@ Both sections will be pretty similar in functionality. Users will be able to vie
     https://docs.google.com/document/d/1rxeSt5BfZ1FsGHn_U94mLWUFId7E8mE7ylYlx0UFLKU/edit#
 
 
+#### How to set up a development environment for my project
+python -m pip install -r requirements.txt
 
 
