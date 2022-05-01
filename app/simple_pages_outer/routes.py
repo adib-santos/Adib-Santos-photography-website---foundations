@@ -27,7 +27,6 @@ def portrait():
     return render_template('simple_pages/portrait.html', fotos = all_fotos)
 
 @blueprint.route('/orders')
-@login_required
 def orders(): 
     orders = current_user.orders
     return render_template('simple_pages/orders.html', orders = orders )
