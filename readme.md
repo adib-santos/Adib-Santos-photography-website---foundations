@@ -5,11 +5,19 @@
 This is aimed to the photography website I use to showcase my projects and portfolio as well as possibly getting new clients.
 I have previously only gotten clients through the work I publish on Instagram, having a personal website will make my work more credible, proffesional and accesible. 
 
+<<<<<<< HEAD
 ### Portrait photography 
 Most of my paid work (with an exception of event/wedding photography) has been portrait photography.
 This section of website will be used to showcase a gallery with no context or backstory of my work as a freelance portrait photographer. 
 
 ### Street photography 
+=======
+# Portrait photography 
+Most of my paid work (with an exception of event/wedding photography) has been portrait photography.
+This section of website will be used to showcase a gallery with no context or backstory of my work as a freelance portrait photographer. 
+
+# Street photography 
+>>>>>>> bd003953fd3b39dd1869f55c5daa0da0fcbe5d4f
 Meant to showcase my work in different cities and the story behind them. Street photography captures candind,
 spontaneus yet detailed stories in a way that no other type of photography can. This part of the website should be 
 used as a storytelling section of my travels through my photographs. 
