@@ -14,13 +14,17 @@ spontaneus yet detailed stories in a way that no other type of photography can.
 
 Both sections will be pretty similar in functionality. Users will be able to view galleries of each genre and click on specific images to view them individually and decide weather to purchase the print. Once the order is placed the user will be redirected to the 'orders' page, where they will be able to view their previous orders in chronological order. 
 
-## Features for potential clients
+## Features and links
 
 + Buying prints
     People will be able to buy prints of my street photography and order it directly to their homes. 
++ Wireframes 
+    https://www.figma.com/file/3h2fUWC0C0CNjS4gg071wn/Photography-website
++ Website architecture diagram 
+    https://miro.com/app/board/uXjVO45z3Do=/?share_link_id=834219706815
++ Self reflection essay 
+    https://docs.google.com/document/d/1rxeSt5BfZ1FsGHn_U94mLWUFId7E8mE7ylYlx0UFLKU/edit#
 
 
-** Link to wireframes ** 
-https://www.figma.com/file/3h2fUWC0C0CNjS4gg071wn/Photography-website
 
 
