@@ -16,13 +16,13 @@ Both sections will be pretty similar in functionality. Users will be able to vie
 
 ## Features and links
 
-+ Buying prints
++ Buying prints: 
     People will be able to buy prints of my street photography and order it directly to their homes. 
-+ Wireframes 
++ Wireframes:  
     https://www.figma.com/file/3h2fUWC0C0CNjS4gg071wn/Photography-website
-+ Website architecture diagram 
++ Website architecture diagram:  
     https://miro.com/app/board/uXjVO45z3Do=/?share_link_id=834219706815
-+ Self reflection essay 
++ Self reflection essay:  
     https://docs.google.com/document/d/1rxeSt5BfZ1FsGHn_U94mLWUFId7E8mE7ylYlx0UFLKU/edit#
 
 
