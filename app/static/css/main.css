@@ -25,7 +25,7 @@ body {
     font-size: 16.3px;
 }
 
-.about:hover {
+.login:hover {
     border: 1px solid black; 
 }
 
@@ -67,7 +67,7 @@ nav ul img {
     margin-left: 1.5rem; 
 }
 
-.about {
+.login {
     border: 0.5px solid var(--second-color);
     padding: 5px 10px 5px 10px; 
 }
@@ -225,6 +225,7 @@ h1, h3{
     box-shadow: 10px 10px 5px var(--shadow);
     position: relative; 
     left: 90px; 
+    transition: width; 
 }
 
 /*  RESPONSIVE GRID */
@@ -236,10 +237,24 @@ h1, h3{
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
     grid-gap: 20px; 
+    transition: grid-template-columns 1s linear; 
 }
 
-.grid-ind img {
+.grid-container img {
     max-width: 400px;
+    transition: max-width 0.5s linear; 
+}
+
+/* cubic-beizer(0.075, 0.82, 0.165, 1) */ 
+
+@media only screen and (min-width: 1500px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .grid-container img {
+        max-width: 350px; 
+    }
 }
 
 
@@ -247,11 +262,19 @@ h1, h3{
     .grid-container {
         grid-template-columns: 1fr 1fr;
     }
+    
+    .grid-container img {
+        max-width: 450px; 
+    }
 }
 
-@media only screen and (max-width: 792px) {
+@media only screen and (max-width: 952px) {
     .grid-container {
         grid-template-columns: 1fr;    
+    }
+
+    .grid-container img {
+        max-width: 500px; 
     }
 }
 
@@ -348,21 +371,29 @@ h1, h3{
     }
 }
 
-@media only screen and (max-width: 650px) {
-    .order {
+@media only screen and (max-width: 880px ) {
+    .order{
         display: none;
+    }
+    .insta {
+        display: none; 
     }
 }
 
-@media only screen and (max-width: 600px) {
-    .about{
-        display: none; 
-    }
+
+@media only screen and (max-width: 650px) {
+
     .item {
         font-size: 14px; 
     }
+    .login {
+        display: none; 
+    }
     .street-main-container {
         margin-top: 10%;
+    }
+    #icon {
+        display: none; 
     }
 }
 
